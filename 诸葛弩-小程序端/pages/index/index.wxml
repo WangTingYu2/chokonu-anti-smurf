@@ -1,0 +1,25 @@
+<!-- <p>你好，{{username}}</p> -->
+<markbook wx:if="{{PageCur=='markbook'}}"></markbook>
+<checkplayer wx:if="{{PageCur=='checkplayer'}}"></checkplayer>
+<techtree wx:if="{{PageCur=='techtree'}}"></techtree>
+
+<view class="cu-bar tabbar bg-white shadow foot">
+  <view class="action" bindtap="NavChange" data-cur="checkplayer">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/component{{PageCur=='component'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='component'?'text-green':'text-gray'}}">在和谁玩</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="techtree">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/plugin{{PageCur=='plugin'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='plugin'?'text-green':'text-gray'}}">科技树</view>
+  </view>
+  <view class="action" bindtap="NavChange" data-cur="markbook">
+    <view class='cuIcon-cu-image'>
+      <image src="/images/tabbar/about{{PageCur=='about'?'_cur':''}}.png"></image>
+    </view>
+    <view class="{{PageCur=='about'?'text-green':'text-gray'}}">更新版本</view>
+  </view>
+</view>

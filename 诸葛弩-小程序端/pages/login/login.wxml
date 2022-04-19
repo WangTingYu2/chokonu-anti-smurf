@@ -1,0 +1,13 @@
+<view class="view-contain-ti">
+  <text class="text-ti">用户名</text>
+  <input class="input1" bindinput="checkNickName"></input>
+</view>
+
+<view class="view-contain-ti">
+  <text class="text-ti">密码</text>
+  <input class="input1" bindinput="checkPassWord" password="true"></input>
+</view>
+<button bindtap="tologin" class="cu-btn loginBtn bg-grey lg button_style">登录</button>
+<view class="solid-bottom text-df padding">
+  本产品不含任何强制注册登录，用户可以通过使用“游客模式”体验到其中的部分内容。游客模式只需要提供本人的steam_id即可使用“在和谁玩”功能。本产品所需的账号密码均为保存steam_id，不用于其他用途，不侵犯用户隐私。
+</view>

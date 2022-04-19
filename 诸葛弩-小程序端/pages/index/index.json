@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "techtree": "../techtree/home/home",
+    "markbook": "../markbook/home/home",
+    "checkplayer": "../checkplayer/home/home"
+  }
+}

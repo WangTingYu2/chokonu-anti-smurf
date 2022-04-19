@@ -1,0 +1,102 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>诸葛弩-数据详情页</title>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link href="{% static 'css/table.css' %}" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+{#<body style="background:url({% static 'images/detail_bg.png' %}) ">#}
+<body style="background-color: #F3F2E7">
+    <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">诸葛弩</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="http://chokonu.top/">主页</a></li>
+                <li class="active"><a href="videodl">录像下载指南</a></li>
+                <li><a href="about">关于本网站</a></li>
+              </ul>
+            </div>
+          </div>
+    </nav>
+{#    <div style="font-size:20px;writing-mode:tb-rl;width:200px;color: white;padding-left:250px;padding-top: 50px;font-family: 'STXingkai';">#}
+    <div style="height: 120px;width:500px;position: absolute;left: 800px;">
+        通过统计该玩家的近{{ inning }}局多人随机游戏，计算出标准差为：<h1>{{ std }}</h1>该玩家{{ opinion }}炸鱼玩家。
+    </div>
+    <div>
+            <table style="width: 600px;margin-left:100px;">
+                <tr>
+                    <th>玩家名称</th>
+                    <th>历史高分</th>
+                    <th>平均分数</th>
+                    <th>当前分数</th>
+                </tr>
+                <tr>
+                    <td>{{ player_name }}</td>
+                    <td>{{ new_highest_rating }}</td>
+                    <td>{{ average }}</td>
+                    <td>{{ now_rating }}</td>
+                </tr>
+            </table>
+        </div>
+
+    <div style="margin-top: 50px;">
+        <div id="line" class="col-md-6" style="width:600px; height:500px;left: 100px;"></div>
+        <div id="pie" class="col-md-6" style="width:600px; height:500px;margin-left: 120px;"></div>
+    </div>
+{#<div id="line" style="width:800px; height:500px;"></div>#}
+<script>
+    var chart = echarts.init(document.getElementById('line'), 'white', {renderer: 'canvas'});
+    var chart2 = echarts.init(document.getElementById('pie'), 'white', {renderer: 'canvas'});
+    var url;
+    var id_start;
+
+    url = window.location.href; /* 获取完整URL */
+    id_start = url.search("steam_id=")
+
+    $(
+        function () {
+            fetchData(chart);
+            fetchData2(chart2)
+        }
+    );
+
+    function fetchData() {
+        url1 = "https://www.chokonu.top/data/"+url.slice(id_start+9,id_start+26)
+        $.ajax({
+            type: "GET",
+            url: url1,
+            dataType: 'json',
+            success: function (result) {
+                chart.setOption(result.data);
+            }
+        });
+    }
+    function fetchData2() {
+        url2 = "https://www.chokonu.top/civ/"+url.slice(id_start+9,id_start+26)
+        $.ajax({
+            type: "GET",
+            url: url2,
+            dataType: 'json',
+            success: function (result) {
+                chart2.setOption(result.data);
+            }
+        });
+    }
+</script>
+</body>
+</html>

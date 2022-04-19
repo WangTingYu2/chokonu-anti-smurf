@@ -1,0 +1,62 @@
+<scroll-view scroll-y class="DrawerPage {{modalName=='viewModal'?'show':''}}">		
+			<view class='padding margin text-center'>
+				<view class='cu-btn bg-green lg block shadow radius margin-xl' bindtap="showModal" data-target="viewModal">
+					选择民族
+				</view>
+			</view>
+
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+			<!-- 垂直导航 -->
+				<view class="VerticalBox">
+					<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh - 375rpx)">
+						<view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{build}}" wx:key="index" bindtap='tabSelect' data-id="{{index}}">
+							<view>{{item.building_name}}</view>
+						</view>
+					</scroll-view>
+					<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375rpx)" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+						<view class="padding-top div_width padding-lr" wx:for="{{build}}" wx:key="index" id="main-{{index}}">
+							<view class='cu-bar solid-bottom bg-white' style="position: relative; left: 0rpx; top: -33rpx">
+								<view class='action'>
+									<text class='cuIcon-title text-green'></text> {{item.building_name}} </view>
+								</view>
+								<view class="cu-list">
+									<view class=" padding" wx:for="{{item.product}}" wx:key="*this" bindtap="getProduct" data-text="{{item}}" data-target="Modal">
+										{{item}}
+									</view>
+								</view>
+							</view>
+					</scroll-view>
+				</view>
+			<!-- 垂直导航 完 -->
+			</view>
+</scroll-view>
+
+		<view class="DrawerClose {{modalName=='viewModal'?'show':''}}" bindtap="hideModal">
+			<text class="cuIcon-pullright"></text>
+		</view>
+		<scroll-view scroll-y class="DrawerWindow {{modalName=='viewModal'?'show':''}}">
+			<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+				<view class="cu-item arrow" wx:for="{{country_list}}" wx:key="index">
+					<view bindtap="country_option" data-id="{{index}}" class="content">
+						<image src="{{item.logo}}"></image>
+						<text class="text-grey">{{item.country}}</text>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+<view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">{{the_name}}</view>
+      <view class="action" bindtap="hidetheInfo">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+		<view class="justify-center">
+			<image class="round" src="{{image}}" style="height:200rpx;width:200rpx"></image>
+		</view>
+      <text class="text-black text-left padding" user-select="false">{{the_info}}</text>
+    </view>
+  </view>
+</view>

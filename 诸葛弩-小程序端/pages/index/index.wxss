@@ -1,0 +1,66 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.loginBtn { 
+  width: 42% !important; 
+  margin-top: 35rpx; 
+  /* padding-left:10rpx; */
+  float:left;
+ }
+ .registerBtn { 
+  width: 42% !important; 
+  margin-top: 35rpx; 
+  /* margin-right:10rpx; */
+  float:right;
+ }
+
+ .logreg{
+  width:75% !important;
+ }
+
+ .cu-btn {
+	position: relative;
+	border: 0rpx;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	padding: 0 30rpx;
+	font-size: 28rpx;
+	height: 64rpx;
+	line-height: 1;
+	text-align: center;
+	text-decoration: none;
+	overflow: visible;
+	margin-left: initial;
+	transform: translate(0rpx, 0rpx);
+	margin-right: initial;
+}
+
+
+.bg-red {
+	background-color: #e54d42;
+	color:  #ffffff;
+}
+
+.font{
+  font-size: large;
+  color: black;
+}

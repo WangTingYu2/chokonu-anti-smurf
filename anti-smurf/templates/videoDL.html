@@ -1,0 +1,127 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="{% static 'css/header.css' %}" rel="stylesheet">
+        <link href="{% static 'css/table.css' %}" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>诸葛弩-录像下载助手</title>
+		<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+	</head>
+
+	<body style="background:url({% static 'images/battlefield.jpg' %}) no-repeat fixed top;background-size: cover">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">诸葛弩</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="https://www.chokonu.top/">主页</a></li>
+                <li class="active"><a href="videodl">录像下载指南</a></li>
+                <li><a href="about">关于本网站</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+		<div>
+			<form method="post" action="" name="form1">
+                {% csrf_token %}
+				<div class="input_div">
+					<!--输入框-->
+                    <select class="input" name="civ_name" style="height: 30px">
+                        <option value=""></option>
+                        <option value="阿兹特克">阿兹特克</option>
+                        <option value="蒙古">蒙古</option>
+                        <option value="法兰克">法兰克</option>
+                        <option value="中国">中国</option>
+                        <option value="埃塞俄比亚">埃塞俄比亚</option>
+                        <option value="柏柏尔">柏柏尔</option>
+                        <option value="拜占庭">拜占庭</option>
+                        <option value="保加利亚">保加利亚</option>
+                        <option value="波兰">波兰</option>
+                        <option value="波斯">波斯</option>
+                        <option value="波西米亚">波西米亚</option>
+                        <option value="勃艮第">勃艮第</option>
+                        <option value="不列颠">不列颠</option>
+                        <option value="鞑靼">鞑靼</option>
+                        <option value="高丽">高丽</option>
+                        <option value="高棉">高棉</option>
+                        <option value="哥特">哥特</option>
+                        <option value="凯尔特">凯尔特</option>
+                        <option value="库曼">库曼</option>
+                        <option value="立陶宛">立陶宛</option>
+                        <option value="马来">马来</option>
+                        <option value="马里">马里</option>
+                        <option value="马扎尔">马扎尔</option>
+                        <option value="玛雅">玛雅</option>
+                        <option value="缅甸">缅甸</option>
+                        <option value="葡萄牙">葡萄牙</option>
+                        <option value="日本">日本</option>
+                        <option value="萨拉森">萨拉森</option>
+                        <option value="条顿">条顿</option>
+                        <option value="土耳其">土耳其</option>
+                        <option value="维京">维京</option>
+                        <option value="西班牙">西班牙</option>
+                        <option value="西西里">西西里</option>
+                        <option value="匈奴">匈奴</option>
+                        <option value="意大利">意大利</option>
+                        <option value="印度">印度</option>
+                        <option value="印加">印加</option>
+                        <option value="越南">越南</option>
+                    </select>
+				</div>
+				<div>
+					<!--两个按钮-->
+					<div class="u4_div">
+						<input type="submit" onclick="document.form1.action='{% url 'check_civ' %}'" value="点击查询" name="civ" class="u31_button"></input>
+					</div>
+				</div>
+			</form>
+
+			<!--网站logo-->
+			<div id="u40">
+				<img id="u40_img" class="img" src="{% static 'images/u40.png' %}" />
+			</div>
+
+			<div id="u42">
+                <p>AoEⅡDE</p>
+			</div>
+
+			<div id="u41">
+				<div>
+					<p><span>Video Download Guide</span></p>
+				</div>
+			</div>
+		</div>
+        <div style="background: white;position: absolute;top: 50%;left: 22%;margin-top: 15%"> {#如何让div居中？#}
+            <table>
+                <th>游戏昵称</th>
+                <th>steam_id</th>
+                <th>常用民族</th>
+                <th>使用频率</th>
+                <th>主页链接</th>
+{#                <th>win_percent</th>#}
+                {% for info in info_list %}
+                    <tr>
+                        <td><a href="{% url 'player' %}?steam_id={{ info.steam_id }}&name={{ info.name }}" style="color:red;text-decoration:none">{{ info.name }}</a></td>
+                        <td><a href="{% url 'player' %}?steam_id={{ info.steam_id }}&name={{ info.name }}" style="color:red;text-decoration:none">{{ info.steam_id }}</a></td>
+                        <td><a href="{% url 'player' %}?steam_id={{ info.steam_id }}&name={{ info.name }}" style="color:red;text-decoration:none">{{ info.favor_civ }}</a></td>
+                        <td><a href="{% url 'player' %}?steam_id={{ info.steam_id }}&name={{ info.name }}" style="color:red;text-decoration:none">{{ info.use_percent }}</a></td>
+                        <td><a href="https://aoe2.net/#profile-{{ info.profile_id }}" style="color:red;text-decoration:none">点击前往主页</a></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+	</body>
+
+</html>
+

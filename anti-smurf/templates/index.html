@@ -1,0 +1,100 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+		<link href="{% static 'css/header.css' %}" rel="stylesheet">
+        <link href="{% static 'css/table.css' %}" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<title>诸葛弩-反炸鱼系统</title>
+		<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+	</head>
+
+	<body style="background:url({% static 'images/battlefield.jpg' %}) no-repeat fixed top;background-size: cover">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">诸葛弩</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="videodl">录像下载指南</a></li>
+                <li><a href="about">关于本网站</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+		<div>
+			<form method="post" action="" name="form1">
+                {% csrf_token %}
+				<div class="input_div">
+					<!--输入框-->
+					<input placeholder="输入用户名" type="text" name="user_name" class="input" />
+				</div>
+
+				<div>
+					<!--两个按钮-->
+					<div class="u3_div">
+						<input type="submit" onclick="document.form1.action='{% url 'toge' %}'" value="和谁在玩" name="with" class="u31_button"></input>
+					</div>
+					<div class="u4_div">
+						<input type="submit" onclick="document.form1.action='{% url 'check' %}'" value="玩家查询" name="check" class="u31_button"></input>{{ error.error }}
+					</div>
+				</div>
+			</form>
+			<!--游戏模式选择-->
+{#			<div class="u5_div">#}
+{#				<div class="u51_div">#}
+{#					<button class="u5_button" style="left: 0px;">单人随机</button>#}
+{#				</div>#}
+{#				<div class="u51_div">#}
+{#					<button class="u5_button" style="left: 124px;">多人随机</button>#}
+{#				</div>#}
+{#				<div class="u51_div">#}
+{#					<button class="u5_button" style="left: 248px;">帝国战争单人</button>#}
+{#				</div>#}
+{#				<div class="u51_div">#}
+{#					<button class="u5_button" style="left: 372px;">帝国战争多人</button>#}
+{#				</div>#}
+{#			</div>#}
+
+			<!--网站logo-->
+			<div id="u40">
+				<img id="u40_img" class="img" src="{% static 'images/u40.png' %}" />
+			</div>
+
+			<div id="u42">
+                <p>AoEⅡDE</p>
+			</div>
+
+			<div id="u41">
+				<div>
+					<p><span>System of Anti Smurf</span></p>
+				</div>
+			</div>
+		</div>
+        <div style="background: white;position: absolute;top: 50%;left: 22%;margin-top: 15%"> {#如何让div居中？#}
+            <table>
+                <th>name</th>
+                <th>steam_id</th>
+{#                <th>win_percent</th>#}
+                {% for info in info_list %}
+                    <tr>
+                        <td><a href="{% url 'player' %}?steam_id={{ info.steam_id }}&name={{ info.name }}" style="color:red;text-decoration:none">{{ info.name }}</a></td>
+                        <td><a href="{% url 'player' %}?steam_id={{ info.steam_id }}&name={{ info.name }}" style="color:red;text-decoration:none">{{ info.steam_id }}</a></td>
+{#                        <td>{{ info.win_percent }}%</td>#}
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+	</body>
+
+</html>

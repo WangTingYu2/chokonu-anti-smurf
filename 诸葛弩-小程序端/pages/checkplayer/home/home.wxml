@@ -1,0 +1,17 @@
+<button bindtap="PlayWithWho">在和谁玩</button>
+<view class="padding-sm">
+  <view class="flex flex-wrap justify-around">
+    <view class="cu-btn animation-{{animation}} margin-sm basis-sm shadow" style="animation-delay: 0.8s;">
+      <view>{{time}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="padding-sm">
+  <view>
+    <view wx:for="{{UserInfoList}}" wx:key="index" class="cu-list menu sm-bordercard-menu margin-top {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: 0.8s;">
+        <view class="cu-item arrow" bindtap="check_player" data-text="{{item}}">{{item.name}}：{{item.steam_id}}</view>
+    </view>
+  </view>
+</view>
+<view style="height:200rpx"></view>

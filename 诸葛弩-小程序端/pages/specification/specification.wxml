@@ -1,0 +1,83 @@
+<view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xl padding">
+        <text class="text-black text-bold">欢迎来到诸葛弩-反炸鱼系统</text>
+      </view>
+    </view>
+</view>
+  <view class="solid-bottom text-df padding">
+    本产品名为 诸葛弩-反炸鱼系统（ChoKonu-system of anti smurf），是一个利用利用帝国时代2决定版官网的Api（https://aoe2.net/#api）制作而成的炸鱼查询小程序，通过计算标准差的方式对当前进行的同一场游戏玩家进行甄别，标准差超过80的将判断为炸鱼玩家。
+  </view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">一、注册</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  打开小程序，将会出现欢迎页，如果是首次使用的玩家，点击注册，填写用户名（可使用自己的名字）、steam_id（必须填写正确的steam_id），然后输入密码，点击注册，然后就可以登录。
+</view>
+<view class="solid-bottom text-df padding">
+  注册使用的用户名、密码仅仅只是为了储存steam_id，方便用户使用，不作任何用途。
+</view>
+<view class="solid-bottom text-df padding">
+  获取steam_id的方法
+</view>
+<view class="solid-bottom text-df padding">
+  一、先前往aoe2.net，搜索自己的id，点击自己的id。
+</view>
+<image src="cloud://laikeds-6n91k.6c61-laikeds-6n91k-1300553978/使用方法/第一步.png" mode="widthFix"></image>
+<view class="solid-bottom text-df padding">
+  二、点击弹窗的“Steam主页”。
+</view>
+<image src="cloud://laikeds-6n91k.6c61-laikeds-6n91k-1300553978/使用方法/第二步.png" mode="widthFix"></image>
+<view class="solid-bottom text-df padding">
+  三、复制链接后面的17位数字，这段数字就是“steam_id”。
+</view>
+<image src="cloud://laikeds-6n91k.6c61-laikeds-6n91k-1300553978/使用方法/第三步.png" mode="widthFix"></image>
+
+<view class="solid-bottom text-df padding">
+  详情请前往B站搜索BV号“BV1Pr4y1r7qR”，或者搜索“时雨阿伦桑”观看视频。如果有什么问题可以通过底部的联系方式联系作者。
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">二、登录</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  输入用户名和密码即可登录该小程序。
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">三、游客模式</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  本产品不含任何强制注册登录，用户可以通过使用“游客模式”体验到其中的部分内容。游客模式只需要提供本人游戏中的用户名（仅限多人随机模式玩家）即可使用“在和谁玩”功能。
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">四、使用方法</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  <view>该小程序拥有两个功能：在和谁玩 和 科技树，后续将考虑开发 收藏夹 功能。</view>
+    <view>“在和谁玩”功能可以在游戏开始数分钟后查询自己对手的分数走势以及标准差，通过标准差判断自己以及其他玩家是否为炸鱼玩家。</view>
+  <view>“科技树”功能为附加功能，是可以在掌上查看帝国时代2科技树的功能。科技树或许会有些许错误以及不足，作者将在后续改进。</view>
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">五、关于作者</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  <view>作者是帝国时代2DE的一名玩家，技术非常拉胯。如果该程序有什么设计不当的地方可以通过以下联系方式联系作者。</view>
+  <view>邮箱：516359919@qq.com\n</view>
+  <view>QQ：516359919\n</view>
+  <view>常用名称：阿伦桑</view>
+</view>
+

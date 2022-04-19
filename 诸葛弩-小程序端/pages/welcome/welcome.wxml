@@ -1,0 +1,23 @@
+<view class="container">
+  <view class="userinfo">
+    <text class="font">欢迎来到诸葛弩-反炸鱼系统</text>
+  </view>
+  <view class="logreg">
+    <button bindtap='gotoLogs' class="cu-btn loginBtn bg-grey">登录</button>
+    <button bindtap='gotoregister' class="cu-btn registerBtn bg-red">注册</button>
+    <button bindtap='visitor' class="cu-btn loginBtn bg-orange">游客模式</button>
+    <button bindtap='specification' class="cu-btn registerBtn bg-blue">使用说明</button>
+  </view>
+</view>
+
+<view>
+各位用户，steam_id不是你的id，是类似于qq号的东西，所以在使用前请仔细阅读“使用说明”。
+</view>
+
+<view class="padding-sm">
+  <view>
+    <view wx:for="{{DataList}}" wx:key="index" class="cu-list menu sm-bordercard-menu margin-top margin-sm basis-sm shadow">
+        <view class="cu-item arrow" bindtap="check_player" data-text="{{item}}">{{item.username}}：{{item.steam_id}}</view>
+    </view>
+  </view>
+</view>

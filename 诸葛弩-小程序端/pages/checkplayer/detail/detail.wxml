@@ -1,0 +1,9 @@
+<view class="container_1">
+  <ec-canvas id="mychart-one" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">玩家 {{check_name}} 的标准差为{{std}}，{{judge}}</text>
+  </view>
+</view>

@@ -1,0 +1,125 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>诸葛弩-关于作者</title>
+<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon"/>
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+/* Custom Styles */
+    ul.nav-tabs{
+        width: 140px;
+        margin-top: 20px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    }
+    ul.nav-tabs li{
+        margin: 0;
+        border-top: 1px solid #ddd;
+    }
+    ul.nav-tabs li:first-child{
+        border-top: none;
+    }
+    ul.nav-tabs li a{
+        margin: 0;
+        padding: 8px 16px;
+        border-radius: 0;
+    }
+    ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
+        color: #fff;
+        background: #0088cc;
+        border: 1px solid #0088cc;
+    }
+    ul.nav-tabs li:first-child a{
+        border-radius: 4px 4px 0 0;
+    }
+    ul.nav-tabs li:last-child a{
+        border-radius: 0 0 4px 4px;
+    }
+    ul.nav-tabs.affix{
+        top: 30px; /* Set the top position of pinned element */
+    }
+    .img {
+        width:100%;
+    }
+</style>
+</head>
+<body data-spy="scroll" data-target="#myScrollspy"  style="background:url({% static 'images/battlefield.jpg' %})  no-repeat fixed top;background-size: cover">
+
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">诸葛弩</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="https://www.chokonu.top/">主页</a></li>
+                <li><a href="videodl">录像下载指南</a></li>
+                <li class="active"><a href="about">关于本网站</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+<div class="container">
+   <div class="jumbotron">
+        <h1>关于 诸葛弩-反炸鱼网站</h1>
+    </div>
+    <div class="row">
+        <div class="col-xs-3" id="myScrollspy">
+            <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125" style="background-color: #F3F2E7">
+                <li class="active"><a href="#section-1">炸鱼识别功能</a></li>
+                <li><a href="#section-2">录像下载指南</a></li>
+                <li><a href="#section-3">详情页说明</a></li>
+                <li><a href="#section-4">关于作者</a></li>
+                <li><a href="#section-5">关于本站</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-9" style="background-color: #F3F2E7">
+            <h2 id="section-1">炸鱼识别功能</h2>
+            <p>通过简易的调查发现，炸鱼玩家分数的标准差大多高于普通玩家，本网站通过计算玩家近60场的多人局，识别一个玩家是否为炸鱼玩家，为用户决策是否继续进行游戏提供依据，保护用户的游戏体验，优化游戏环境，倡导公平竞技。</p>
+            <p>如果一个炸鱼玩家想要炸鱼，要么大规模掉分，要么开小号，用小号和低分段玩家进行游戏。这两者进行游戏时也会导致分数大幅度增长或下跌，那么随之而来的是分数十分不稳定，也就是标准差会变大，因此通过计算标准差来识别炸鱼玩家有一定的依据。</p>
+            <p>本产品的识别功能为十分简陋的计算方差功能，只能做到简单的识别，精确度并不高，因此可能会有误识别的事情发生，如果误会非炸鱼玩家再此向您道歉，作者会学习如何改进该算法。</p>
+            <img id="u40_img" class="img" src="{% static 'images/use_way.png' %}" />
+            <hr>
+            <img id="u40_img" class="img" src="{% static 'images/data_show.png' %}" />
+            <hr>
+            <h2 id="section-2">录像下载指南</h2>
+            <p>本产品通过作者自己亲身经历——想要练习某个民族，却又无法找到该民族的录像的痛点，通过统计每个玩家近20把比赛使用次数最高的民族，当用户在输入框输入自己想下载的民族的录像，它会自动统计数百名玩家使用的民族，找到使用该民族使用频率最高的玩家，引导用户进入录像下载的页面。</p>
+            <p>以作者为例，作者是一个痴迷于中国这个民族的玩家，然而由于上手难而且操作繁琐，很不适合新手。但是伟大的首领荷夫在采访中说：想要提高技术，就应该去多看录像，尤其是自己的录像，然后对比高手的录像，寻找自己的不足。但是对于中国这个特殊民族来说，很难找到录像来学习，这个时候我就可以到网站搜索自己想要的民族，观察是否有哪个选手使用的频率更多，今后一段时间就可以专门去这个选手的主页下载这些录像，非常方便。</p>
+            <p>数据库每日0点会更新，所以可能会导致统计与真实情况不符。但是预计不影响正常使用。使用过程中可能出现玩家使用某个民族的频率并不高，因此后续可能从数据库剔除此类玩家。</p>
+            <img id="u40_img" class="img" src="{% static 'images/DL_use_st.png' %}" />
+            <hr>
+            <img id="u40_img" class="img" src="{% static 'images/Dl_use_nd.png' %}" />
+            <hr>
+            <h2 id="section-3">详情页说明</h2>
+            <p>本产品的详情页除了判断是否炸鱼，还会显示最高分、平均分，用于辅助用户判断该玩家是否为炸鱼玩家。同时还会统计用户近80把使用的民族，制作成扇形图，供需要下载录像的用户参考。</p>
+            <hr>
+            <h2 id="section-4">关于作者</h2>
+            <p>作者是帝国时代2DE的一名玩家，自从小学便非常喜欢这款游戏，但是都是乱玩，自从2021年7月才开始购买该款游戏，技术非常拉胯，希望有dalao能多带带我。</p>
+            <p>因为不满炸鱼玩家对游戏环境的破坏，以及为了保护其他正常游戏的玩家，维护游戏生态的安宁，希望游戏能够健康发展，避免玩家流失，于是作者利用自己所学知识构建的数据可视化网站，能够给予正常玩家在游戏前识别炸鱼玩家的能力，不需要切出去，如果该网站有什么设计不当的地方可以通过以下联系方式联系作者。</p>
+            <p>邮箱：516359919@qq.com</p>
+            <p>QQ：516359919</p>
+            <p>常用名称：阿伦桑</p>
+            <hr>
+            <h2 id="section-5">关于本站</h2>
+            <p>本站采用Python的建站第三方库Django制作而成，同时使用pandas数据分析、pyecharts数据可视化等第三方库制作出的数据可视化网站。后续可能采用sklearn等第三方库对算法进行改进。</p>
+            <p>本站采用的数据来源均为帝国时代2DE战绩统计网站<a href="https://aoe2.net/">https://aoe2.net/</a>的API(<a href="https://aoe2.net/#api">https://aoe2.net/#api</a>)，合法合规，并无涉嫌任何非法爬虫、盗取用户数据等行为。</p>
+            <p>由于使用了数个api，且均为国外的网站，因此该网站的运行速度可能会稍微慢一些，请各位用户包涵，使用时也请耐心等待。</p>
+            <s>本网站将会推出微信端的小程序，敬请关注。</s>
+            <p>本网站已经推出微信小程序，小程序端可以在游戏开始时用手机使用“在和谁玩”功能，并且查看玩家是不是炸鱼玩家，不需要切出游戏，更加方便快捷。同时小程序端拥有查看科技树的能力。</p>
+            <img id="u40_img" src="{% static 'images/QR-code.jpg' %}" />
+        </div>
+    </div>
+</div>
+</body>
+</html>

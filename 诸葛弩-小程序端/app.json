@@ -1,0 +1,24 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/new_visitor/new_visitor",
+    "pages/techtree/home/home",
+    "pages/checkplayer/home/home",
+    "pages/checkplayer/detail/detail",
+    "pages/index/index",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/markbook/home/home",
+    "pages/specification/specification",
+    "pages/text/text",
+    "pages/visitor/visitor"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

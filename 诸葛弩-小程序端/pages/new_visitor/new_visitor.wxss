@@ -1,0 +1,27 @@
+.view-contain-ti {
+  display: flex;
+  height: 40px;
+  margin: 20px;
+  border: 5rpx solid #be6319;
+  border-radius: 10rpx;
+}
+
+.text-ti {
+  position: absolute;
+  font-size: 12px;
+  background:#F1F1F1;
+  margin: -10px 0 0 10px;
+  padding: 0 5px;
+  color: rgb(144, 147, 167);
+}
+
+.input1 {
+  margin:  auto 10px;
+}
+
+.button_style{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size:40rpx;
+}

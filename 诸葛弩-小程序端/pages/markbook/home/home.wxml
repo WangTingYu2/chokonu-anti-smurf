@@ -1,0 +1,43 @@
+<view class="solids-bottom padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-xl padding">
+        <text class="text-black text-bold">版本更新历史</text>
+      </view>
+    </view>
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">3.0.1</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  在游客模式里使用了输入用户名即可使用的功能，不需要再输入steam_id。
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">2.0.3</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  添加了使用说明，并且解决了重复注册不报错的bug。
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">2.0.3</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  为单挑识别的标准差识别加入分级机制（0~900位32；900~1200位42；1200~1700为55；1700以上为65。）
+</view>
+
+<view class="flex-sub text-center">
+  <view class="solid-bottom text-lg padding">
+    <text class="text-black">2.0.1</text>
+  </view>
+</view>
+<view class="solid-bottom text-df padding">
+  添加了单挑识别，并且为科技树添加点击反馈。
+</view>

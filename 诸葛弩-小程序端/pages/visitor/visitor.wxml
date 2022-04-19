@@ -1,0 +1,23 @@
+<view class="view-contain-ti">
+  <text class="text-ti">请输入steam_id</text>
+  <input class="input1" bindinput="get_steam_id" value="{{auto_steam_id}}@"></input>
+</view>
+<view class="cu-btn registerBtn lg">点击之前请删除数字后的@</view>
+<button class="cu-btn registerBtn bg-orange lg button_style"  bindtap="experience">体验</button>
+
+<view class="padding-sm">
+  <view class="flex flex-wrap justify-around">
+    <view class="cu-btn animation-{{animation}} margin-sm basis-sm shadow" style="animation-delay: 0.8s;">
+      <view>{{time}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="padding-sm">
+  <view>
+    <view wx:for="{{UserInfoList}}" wx:key="index" class="cu-list menu sm-bordercard-menu margin-top {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: 0.8s;">
+        <view class="cu-item arrow" bindtap="check_player" data-text="{{item}}">{{item.name}}：{{item.steam_id}}</view>
+    </view>
+  </view>
+</view>
+<view style="height:200rpx"></view>
